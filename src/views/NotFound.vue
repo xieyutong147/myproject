@@ -1,10 +1,12 @@
 <template>
-$END$
+<div>
+  aaa
+</div>
 </template>
 
 <script>
 export default {
-name: "BlogCard"
+  name: "NotFound"
 }
 </script>
 

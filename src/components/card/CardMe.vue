@@ -1,17 +1,21 @@
 <template>
-  <el-card>
-    <h1 class="me-author-name">{{ current_userInfo.nickname }}</h1>
-    <div class="me-author-description">
-      <span><i class="me-icon-job"></i> &nbsp;{{ current_userInfo.email }}</span>
-    </div>
-<!--    <div class="me-author-tool">-->
-<!--      <i @click="showTool(current_userInfo)" :title="qq.title" class="me-icon-QQ"></i>-->
-<!--      <i @click="showTool(current_userInfo)" :title="github.title" class="me-icon-github"></i>-->
+<!--  <el-card>-->
+<!--    <h1 class="me-author-name">-->
+<!--      <el-avatar :src="current_userInfo.avatar"></el-avatar>-->
+<!--      {{ current_userInfo.nickname }}</h1>-->
+<!--    <div class="me-author-description">-->
+<!--      <el-col>&nbsp{{ current_userInfo.email }}</el-col>-->
+<!--      <el-col>{{ current_userInfo.having_createdTime}}</el-col>-->
 <!--    </div>-->
-  </el-card>
+<!--&lt;!&ndash;    <div class="me-author-tool">&ndash;&gt;-->
+<!--&lt;!&ndash;      <i @click="showTool(current_userInfo)" :title="qq.title" class="me-icon-QQ"></i>&ndash;&gt;-->
+<!--&lt;!&ndash;      <i @click="showTool(current_userInfo)" :title="github.title" class="me-icon-github"></i>&ndash;&gt;-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--  </el-card>-->
 </template>
 
 <script>
+
 
 
 export default {
@@ -21,7 +25,6 @@ export default {
       current_userInfo: {
         nickname: this.$store.state.nickname,
         avatar: this.$store.state.avatar,
-        having_createdTime: this.$store.state.create_time - Date.now(),
         email: this.$store.state.email
       }
     }

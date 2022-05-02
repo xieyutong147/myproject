@@ -1,40 +1,31 @@
-import request from '@/request'
+import request from "@/utils/request";
 
-export function login(account, password) {
+
+export function login(username, password) {
   const data = {
-    account,
+    username,
     password
   }
-  return request({
-    url: '/login',
-    method: 'post',
-    data
-  })
+  return request.post("/users/login",data)
 }
 
-export function logout() {
-  return request({
-    url: '/logout',
-    method: 'get'
-  })
+export function logout(username) {
+  return request.delete("/users/logoutByUserName/"+username)
 }
 
-export function getUserInfo() {
-  return request({
-    url: '/users/currentUser',
-    method: 'get'
-  })
+export function getUserInfo(id) {
+  return request.post("/users/getUserInfo/"+id)
 }
 
-export function register(account, nickname, password) {
+export function register(username, password,email,vercode) {
   const data = {
-    account,
-    nickname,
-    password
+    username,
+    email,
+    password,
+    vercode,
   }
-  return request({
-    url: '/register',
-    method: 'post',
-    data
-  })
+  return request.post("/users/registerByEmail",data)
+}
+export function sendvercode(email) {
+  return request.post("/mails/sendEmail/"+email)
 }

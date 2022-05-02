@@ -17,7 +17,15 @@ export const state_code ={
     MAIL_SUCCESS:40000,
     MAIL_ERROR:40001,
     MAIL_FORM_ERROR:40002,
+    TOKEN_EXPIRED:90003,
+    HANDLE_FAILED:60001,
+    HANDLE_SUCCESS:60000,
 
+}
+export function sleep(time){
+    return new Promise(function(resolve){
+        setTimeout(resolve, time);
+    });
 }
 
 

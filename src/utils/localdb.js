@@ -1,17 +1,16 @@
-export const localStorageSet = (name, data, expire = new Date().setDate(new Date().getDate() + 1)) => {
+export const localStorageSet = (name, data, expire = new Date().setDate(new Date().getDate() + 7)) => {
     const obj = {
       data,
       expire
     };
     localStorage.setItem(name, JSON.stringify(obj));
   };
-  
+
   //读取缓存
 export const localStorageGet = name => {
     const storage = localStorage.getItem(name);
     const time = new Date().getTime();
-  
-    let result = {};
+    let result;
     if (storage) {
       const obj = JSON.parse(storage);
       if (time < obj.expire) {
@@ -19,6 +18,7 @@ export const localStorageGet = name => {
       } else {
         localStorage.removeItem(name);
       }
+        return result;
     }
-    return result;
+    return '';
   };
